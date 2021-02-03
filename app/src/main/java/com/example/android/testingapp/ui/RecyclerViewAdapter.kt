@@ -18,27 +18,36 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(
         notifyDataSetChanged()
     }
 
-
     override fun getItemCount(): Int {
         return data.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_item,parent,false)
-        return ViewHolder(view)
+        return ViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = data[position]
-        holder.title.text = item.name
-        Glide.with(holder.itemView).load(BASE_URL+"/"+ item.img).into(holder.imageView)
+        holder.bind(item)
     }
 
-
-    class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+    class ViewHolder private constructor(itemView:View):RecyclerView.ViewHolder(itemView){
         val imageView = itemView.findViewById<ImageView>(R.id.imageView_item)
         val title = itemView.findViewById<TextView>(R.id.textView_title)
-    }
 
+        fun bind(
+            item: CompanyResponseItem
+        ) {
+            title.text = item.name
+            Glide.with(itemView).load(BASE_URL + "/" + item.img).into(imageView)
+        }
+
+        companion object {
+            fun from(parent: ViewGroup): ViewHolder {
+                val view = LayoutInflater.from(parent.context)
+                    .inflate(R.layout.recycler_item, parent, false)
+                return ViewHolder(view)
+            }
+        }
+    }
 }
