@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.android.testingapp.data.response_entity.CompanyResponseItem" />
+
+        <variable
+            name="clickListener"
+            type="com.example.android.testingapp.ui.adapter.RecyclerClickListener" />
+    </data>
+
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +25,8 @@
         android:layout_height="match_parent"
         android:src="#c6c6c6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:companyImage="@{item}"/>
 
     <Button
         android:id="@+id/button_over"
@@ -22,7 +37,8 @@
         android:background="@drawable/button_background"
         android:text="@string/go_over"
         app:layout_constraintBottom_toBottomOf="@+id/imageView_item"
-        app:layout_constraintEnd_toEndOf="@+id/imageView_item" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView_item"
+        android:onClick="@{()->clickListener.onClick(item)}"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -46,3 +62,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
