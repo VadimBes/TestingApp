@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.android.testingapp.ui.MainViewModel" />
+            type="com.example.android.testingapp.ui.fragments.MainViewModel" />
     </data>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
