@@ -1,4 +1,5 @@
 package com.example.android.testingapp.data.remote
 
-interface ConnectivityInterceptor {
-}
+import okhttp3.Interceptor
+
+interface ConnectivityInterceptor:Interceptor

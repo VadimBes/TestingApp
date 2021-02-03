@@ -6,14 +6,14 @@
     android:layout_height="250dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="#c6c6c6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/button_over"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,8 +21,8 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_background"
         android:text="@string/go_over"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_item"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_item" />
 
     <ImageView
         android:layout_width="match_parent"

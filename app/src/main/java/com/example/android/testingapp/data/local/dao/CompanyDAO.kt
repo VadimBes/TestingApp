@@ -14,7 +14,7 @@ interface CompanyDAO {
     fun insert(companyItem:CompanyResponseItem)
 
     @Query("SELECT * FROM CompanyResponseItem")
-    fun getAllCompany():LiveData<CompanyResponseItem>
+    fun getAllCompany():LiveData<List<CompanyResponseItem>>
 
 
 }

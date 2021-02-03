@@ -8,10 +8,10 @@ import retrofit2.http.Query
 
 interface CompanyApi {
 
-    @GET("/test.php")
+    @GET("test.php")
     fun getCompanyList(): Deferred<List<CompanyResponseItem>>
 
-    @GET("/test.php")
+    @GET("test.php")
     fun getCompanybyId(
         @Query("id") id: String
     ):Deferred<List<CompanyDetailResponseItem>>
